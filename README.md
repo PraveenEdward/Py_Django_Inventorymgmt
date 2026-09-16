@@ -68,9 +68,10 @@ cd <directory-name>
 
 ### 2. Install Python & Libraries
 
-```
+```bash
 sudo apt update -y
-sudo apt install -y python3 python3.12-venv
+sudo apt install -y python3-venv python3.14-dev
+sudo apt install -y pkg-config default-libmysqlclient-dev build-essential
 ```
 
 ### 3. Create Virtual Environment
@@ -87,15 +88,15 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
-**Linux(ubuntu)/macOS:**
+**Linux (Ubuntu) / macOS:**
 
 ```bash
 source .venv/bin/activate
 ```
 
-### 5.upgrade pip
+### 5. Upgrade pip
 
-```
+```bash
 python -m pip install --upgrade pip
 ```
 
@@ -105,14 +106,11 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## 7. check your django project
+### 7. Check Your Django Project
 
-```
+```bash
 python manage.py check
 ```
-
-
-
 
 ### 8. Apply Database Migrations
 
@@ -121,13 +119,13 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 7. Create Admin User
+### 9. Create Admin User
 
 ```bash
 python manage.py createsuperuser
 ```
 
-### 8. Run the Server
+### 10. Run the Server
 
 ```bash
 python manage.py runserver 0.0.0.0:8000
