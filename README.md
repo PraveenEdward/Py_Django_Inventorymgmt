@@ -106,26 +106,51 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 7. Check Your Django Project
+### 7. Configure RDS Database
+
+Edit the Django settings file:
+
+```bash
+sudo nano config/settings.py
+```
+
+Update the `DATABASES` section:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'rdsdbnamedjango',
+        'USER': 'rdsuser',
+        'PASSWORD': 'rds-pass',
+        'HOST': 'RDS-endpoint',
+        'PORT': '3306',
+    }
+}
+```
+
+Replace the values with your actual **RDS database name, username, password, and endpoint**.
+
+### 8. Check Your Django Project
 
 ```bash
 python manage.py check
 ```
 
-### 8. Apply Database Migrations
+### 9. Apply Database Migrations
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 9. Create Admin User
+### 10. Create Admin User
 
 ```bash
 python manage.py createsuperuser
 ```
 
-### 10. Run the Server
+### 11. Run the Server
 
 ```bash
 python manage.py runserver 0.0.0.0:8000
@@ -145,11 +170,9 @@ http://<ec2-publicip>:8000/admin/
 
 ## 🗄️ Database
 
-The project uses **SQLite** by default for development.
+The project uses **MySQL (Amazon RDS)** for the production database.
 
 Database management is handled through the **Django ORM and migrations**.
-
-For production, the project can be configured to use **MySQL**.
 
 ## 📦 Main Modules
 
