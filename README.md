@@ -62,8 +62,8 @@ The following features are planned for the next version:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/USERNAME/REPOSITORY.git
-cd REPOSITORY
+git clone <repo-url>
+cd <directory-name>
 ```
 
 ### 2. Install Python & Libraries
@@ -87,7 +87,7 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
-**Linux/macOS:**
+**Linux(ubuntu)/macOS:**
 
 ```bash
 source .venv/bin/activate
@@ -118,6 +118,7 @@ python manage.py check
 
 ```bash
 python manage.py makemigrations
+python manage.py migrate
 ```
 
 ### 7. Create Admin User
